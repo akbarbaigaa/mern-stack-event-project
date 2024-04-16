@@ -19,6 +19,14 @@ app.use(cors({
 app.use(express.json());//To parse a string the received data
 app.use(express.urlencoded({ extended: true }));//it checks the database inputs to keep it in a string fromat(It checks the data)
 
+app.get("/", (req, res) => {
+    res.json({
+        success: true,
+        message: "Welcome to front end"
+    })
+})
+
+
 app.use("/api/v1/message", messageRouter)
 
 dbConnection();
